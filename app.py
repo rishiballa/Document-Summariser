@@ -4,7 +4,7 @@ import os
 from langchain_ollama import OllamaLLM
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.chains import load_summarize_chain
+from langchain.chains.summarize import load_summarize_chain
 
 # --- CONFIGURATION ---
 # We use the 1B model because it's under 1GB and fast.
@@ -66,4 +66,5 @@ if uploaded_file:
             st.info("Tip: If the error is 'context length', try reducing Chunk Size in the sidebar.")
             
     # Cleanup temp file
+
     os.remove(tmp_path)
